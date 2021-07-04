@@ -1,8 +1,9 @@
 #!/bin/sh
-#
-# macOS 管理工具
 
+# 自定义 cli 名称
 export BIN_NAME='dm'
+
+# dotfiles 路径
 export BIN_PATH=$HOME/.config/dotfiles
 
 export BOLD=$'\e[1m'
@@ -35,14 +36,14 @@ export ICON_STEP='⧗'
 #######################################
 usage() {
 cat <<EOF
-Usage: ${BIN_NAME} [command]
-
-Commands:
-  install       初使化安装
-  uninstall     卸载
-  clean         系统清理
-  version       当前版本号
-  help          帮助文档
+Usage:
+  ${BIN_NAME} [command]
+Available Commands:
+  add         添加环境
+  remove      移除环境
+  clean       清理环境
+  checkhealth 检测环境
+  help        帮助文档
 EOF
 }
 
@@ -51,11 +52,11 @@ EOF
 #######################################
 main() {
   case $1 in
-    install)
-      sh $BIN_PATH/commands/install "$2"
+    add)
+      sh $BIN_PATH/commands/add "$2"
       ;;
-    uninstall)
-      sh $BIN_PATH/commands/uninstall "$2"
+    remove)
+      sh $BIN_PATH/commands/remove "$2"
       ;;
     clean)
       sh $BIN_PATH/commands/clean "$2"
@@ -63,12 +64,10 @@ main() {
     checkhealth)
       sh $BIN_PATH/commands/checkhealth
       ;;
-    '' | h | help)
+    help)
       usage
       ;;
     *)
-      echo "The specified command is invalid. For a list of available
-      options,run dm help."
       ;;
   esac
 }

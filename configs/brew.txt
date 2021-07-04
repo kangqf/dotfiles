@@ -1,0 +1,13 @@
+wget
+node
+mas
+tmux
+dockutil
+cloc
+webp
+go
+fzf
+ripgrep
+postgresql
+aria2
+youtube-dl
