@@ -1,3 +1,7 @@
+###############################################################################
+# Homebrew                                                                    #
+###############################################################################
+
 # 不发送分析
 export HOMEBREW_NO_ANALYTICS=1
 
@@ -5,7 +9,7 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=true
 
 # 将这些选项附加到所有 cask 命令
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --fontdir=/Library/Fonts"
 
 # TUNA
 export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
@@ -22,6 +26,12 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bott
 # export HOMEBREW_CORE_GIT_REMOTE=https://github.com/Homebrew/homebrew-core
 # export HOMEBREW_BOTTLE_DOMAIN=https://ghcr.io/v2/homebrew/core
 
+
+
+###############################################################################
+# Golang                                                                      #
+###############################################################################
+
 # Go 环境变量
 export GOPATH=/usr/local/lib/go
 export PATH=$GOPATH/bin:$PATH
@@ -30,8 +40,12 @@ export GO111MODULE=on
 # Go 代理
 export GOPROXY=https://goproxy.cn
 
+
+
+###############################################################################
+# Dotfiles                                                                    #
+###############################################################################
+
 # 将自定义 dm 命名添加至环境变量
 export DOTPATH=$HOME/.config/dotfiles
 export PATH=$DOTPATH/bin:$PATH
-
-export EDITOR='nvim'
