@@ -11,3 +11,13 @@ echo "\n"
 echo "${CYAN}#--------------------------------------------------------------------"
 echo "# Golang"
 echo "#--------------------------------------------------------------------${RESET}\n"
+
+if test ! $(which go); then
+  brew install go
+fi
+
+# user china proxy
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+
+go get golang.org/x/tools/gopls@latest

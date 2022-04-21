@@ -11,3 +11,7 @@ echo "\n"
 echo "${CYAN}#--------------------------------------------------------------------"
 echo "# Visual Studio Code"
 echo "#--------------------------------------------------------------------${RESET}\n"
+
+if test ! $(which code); then
+  brew install visual-studio-code --cask
+fi
