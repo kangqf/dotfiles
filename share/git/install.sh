@@ -11,3 +11,9 @@ echo "\n"
 echo "${CYAN}#--------------------------------------------------------------------"
 echo "# Git"
 echo "#--------------------------------------------------------------------${RESET}\n"
+
+if ! command -v gh; then
+  brew install gh
+fi
+
+gh auth login --with-token < ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Home/github-token.txt

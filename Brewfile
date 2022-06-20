@@ -4,6 +4,7 @@ cask_args appdir: "/Applications"
 tap "homebrew/cask"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 # brew
 brew "aria2"
@@ -14,8 +15,14 @@ brew "yarn"
 brew "tmux"
 brew "dockutil"
 brew "webp"
+brew "pandoc"
 brew "go"
-brew "mysql"
+brew "gh"
+brew "postgresql"
+brew "neovim"
+brew "tree-sitter"
+brew "ffmpeg"
+brew "imagemagick"
 
 # Apps
 cask "alfred"
@@ -28,3 +35,5 @@ cask "visual-studio-code"
 cask "the-unarchiver"
 cask "qq"
 cask "wechat"
+
+# Fonts
