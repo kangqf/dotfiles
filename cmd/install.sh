@@ -9,7 +9,6 @@ Usage: dot install [command]
 Available Commands:
   brew     Homebrew 安装
   git      Git 环境
-  go       Golang 环境
   iterm    终端配置
   macos    系统偏好设置
   neovim   NeoVim 配置
@@ -30,7 +29,6 @@ main() {
       dot install brew
       dot install git
       dot install node
-      dot install go
       dot install iterm
       dot install vscode
       dot install neovim
@@ -41,9 +39,6 @@ main() {
       ;;
     git)
       sh $DOTPATH/share/git/install.sh
-      ;;
-    go)
-      sh $DOTPATH/share/go/install.sh
       ;;
     iterm)
       sh $DOTPATH/share/iterm/install.sh

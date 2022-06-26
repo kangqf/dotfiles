@@ -15,46 +15,6 @@
 </p>
 
 
-特性
----
-
-网上有许多 `dotfiles`，但都极度私有化，基本只能参考一下人家配置和学习代码写法。但整体理解下来功能与实现情况如下：
-
-- [x] 实现软件和命令行工具的安装(如 macOS 的 brew，Linux 的 pacman apt dnf 等)
-- [x] 配置文件的备份(软链接、复制、Git 克隆之类的方式)
-- [-] 封装定义一些效率脚本
-
-
-安装
----
-
-``` sh
-$ git clone https://github.com/renchunhui/dotfiles ~/.config/dotfiles
-$ cd $HOME/.config/dotfiles
-$ chmod +x ./install.sh
-$ ./install.sh
-```
-
-如何配置
----
-
-- **pkgs:** 安装包
-
-  - **summary:** 描述
-  - **install:** 执行的命令
-  - **list:** 列表
-
-    - **name:** 包名
-    - **summary:** 描述
-- **porter:** 搬运
-
-  - **summary:** 描述
-  - **list:** 列表
-
-    - **type:** 命令类型
-    - **from:** 从什么位置
-    - **to:** 到什么位置
-
 
 版权协议
 ---

@@ -2,8 +2,6 @@
 #
 # 安装 zsh 环境
 
-set -e
-
 RED=$'\e[31m'
 GREEN=$'\e[32m'
 CYAN=$'\e[36m'

@@ -31,13 +31,6 @@ yarn global add typescript-language-server
 yarn global add @tailwindcss/language-server
 yarn global add @volar/vue-language-server
 yarn global add yaml-language-server
-yarn global add pyright
-
-if test ! $(which go); then
-  brew install go
-fi
-
-go install golang.org/x/tools/gopls@latest
 
 if [[ ! -d "$HOME/.config/nvim/lua-language-server" ]]; then
   cd $HOME/.config/nvim
