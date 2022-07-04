@@ -5,9 +5,10 @@
 #----------------------------------------------------------------------
 usage() {
 cat <<EOF
-Usage: dot [command]
+USAGE
+  $ dot [COMMANDS]
 
-Commands:
+COMMANDS:
   clean
   checkhealth
   install
@@ -15,7 +16,6 @@ Commands:
   help
 EOF
 }
-
 
 #----------------------------------------------------------------------
 # 入口

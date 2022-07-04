@@ -7,18 +7,22 @@ GREEN=$'\e[32m'
 CYAN=$'\e[36m'
 RESET=$'\e[0m'
 
-echo "\n"
-echo "${CYAN}#--------------------------------------------------------------------"
-echo "# NeoVim"
-echo "#--------------------------------------------------------------------${RESET}\n"
+cat <<EOF
+${CYAN}
+┌─────────────────────────────────── NeoVim ──────────────────────────────────┐
+│                    Hyperextensible Vim-based text editor                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+${RESET}
+EOF
 
 # 安装 lua 环境
 if test ! $(which ninja); then
   brew install ninja
 fi
 
-if test ! $(which nvim); then
+if ! command -v nvim >/dev/null 2>&1; then
   brew install neovim
+  echo ${GREEN}✔${RESET} "neovim"
 fi
 
 if [[ ! -d "$HOME/.config/nvim" ]]; then

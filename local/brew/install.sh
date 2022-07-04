@@ -2,15 +2,18 @@
 #
 # Homebrew
 
-RED=$'\e[31m'
-GREEN=$'\e[32m'
+set -e
+
 CYAN=$'\e[36m'
 RESET=$'\e[0m'
 
-echo "\n"
-echo "${CYAN}#--------------------------------------------------------------------"
-echo "# Homebrew"
-echo "#--------------------------------------------------------------------${RESET}\n"
+cat <<EOF
+${CYAN}
+┌───────────────────────────────── Homebrew ──────────────────────────────────┐
+│                        The package manager for macOS                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+${RESET}
+EOF
 
 if ! command -v brew >/dev/null 2>&1; then
   echo "  Installing Homebrew for you."

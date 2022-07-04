@@ -7,9 +7,13 @@ GREEN=$'\e[32m'
 CYAN=$'\e[36m'
 RESET=$'\e[0m'
 
-echo "${CYAN}#--------------------------------------------------------------------"
-echo "# Install zsh"
-echo "#--------------------------------------------------------------------${RESET}\n"
+cat <<EOF
+${CYAN}
+┌───────────────────────────────── Oh My ZSH ─────────────────────────────────┐
+│                   Unleash your terminal like never before                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+${RESET}
+EOF
 
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
   git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh || exit 1
@@ -66,5 +70,9 @@ fi
 rm -rf $HOME/.zshrc
 
 cp $DOTPATH/etc/zshrc $HOME/.zshrc
+
+if [[ $(uname -m) == "arm64" ]]; then
+  cp $DOTPATH/etc/zprofile $HOME/.zprofile
+fi
 
 source ~/.zshrc

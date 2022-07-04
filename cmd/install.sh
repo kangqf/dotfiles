@@ -35,28 +35,28 @@ main() {
       dot install macos
       ;;
     brew)
-      sh $DOTPATH/share/brew/install.sh
+      sh $DOTPATH/local/brew/install.sh
       ;;
     git)
-      sh $DOTPATH/share/git/install.sh
+      sh $DOTPATH/local/git/install.sh
       ;;
     iterm)
-      sh $DOTPATH/share/iterm/install.sh
+      sh $DOTPATH/local/iterm/install.sh
       ;;
     macos)
-      sh $DOTPATH/share/macos/install.sh
+      sh $DOTPATH/local/macos/install.sh
       ;;
     neovim)
-      sh $DOTPATH/share/neovim/install.sh
+      sh $DOTPATH/local/neovim/install.sh
       ;;
     node)
-      sh $DOTPATH/share/node/install.sh
+      sh $DOTPATH/local/node/install.sh
       ;;
     vscode)
-      sh $DOTPATH/share/vscode/install.sh
+      sh $DOTPATH/local/vscode/install.sh
       ;;
     zsh)
-      sh $DOTPATH/share/zsh/install.sh
+      sh $DOTPATH/local/zsh/install.sh
       ;;
     help)
       usage

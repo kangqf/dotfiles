@@ -10,3 +10,5 @@ yarn global remove typescript-language-server
 yarn global remove @tailwindcss/language-server
 yarn global remove @volar/vue-language-server
 yarn global remove yaml-language-server
+
+brew uninstall neovim
