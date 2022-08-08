@@ -15,3 +15,5 @@ echo "#--------------------------------------------------------------------${RES
 if ! command -v pnpm; then
   brew install pnpm
 fi
+
+cp $XDG_CONFIG_HOME/dotfiles/etc/npmrc $HOME/.npmrc

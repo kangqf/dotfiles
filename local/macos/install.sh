@@ -73,7 +73,7 @@ dock_item() {
 
 defaults write com.apple.dock \
                persistent-apps -array "$(dock_item '/System/Applications/Launchpad.app')" \
-                                      "$(dock_item '/Applications/Safari.app')" \
+                                      "$(dock_item '/Applications/Google Chrome.app')" \
                                       "$(dock_item '/System/Applications/Mail.app')" \
                                       "$(dock_item '/Applications/WeChat.app')" \
                                       "$(dock_item '/Applications/QQ.app')" \
