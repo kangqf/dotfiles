@@ -15,12 +15,12 @@ ${CYAN}
 ${RESET}
 EOF
 
-if [[ -f "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Home/.config/gh/hosts.yml" ]]; then
+if [[ ! -f "$HOME/.config/gh/hosts.yml" ]]; then
   cp "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Home/.config/gh/hosts.yml" $HOME/.config/gh/hosts.yml
   echo ${GREEN}✔${RESET} "Add GitHub personal access token"
 fi
 
-if [[ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Home/.ssh" ]]; then
+if [[ ! -d "$HOME/.ssh" ]]; then
   cp -R "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Home/.ssh" $HOME/.ssh
   echo ${GREEN}✔${RESET} "Add SSH key to my GitHub account"
 fi

@@ -4,23 +4,18 @@ cask_args appdir: "/Applications"
 tap "homebrew/cask"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 # brew
-brew "aria2"
 brew "cloc"
 brew "wget"
 brew "node"
-brew "yarn"
+brew "pnpm"
 brew "tmux"
-brew "dockutil"
-brew "webp"
-brew "pandoc"
 brew "gh"
-brew "postgresql"
 brew "neovim"
 brew "tree-sitter"
-brew "ffmpeg"
-brew "imagemagick"
+brew "mysql"
 
 # Apps
 cask "alfred"
@@ -33,3 +28,4 @@ cask "qq"
 cask "wechat"
 
 # Fonts
+cask "font-fira-mono-nerd-font"

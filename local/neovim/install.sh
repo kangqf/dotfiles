@@ -29,12 +29,12 @@ if [[ ! -d "$HOME/.config/nvim" ]]; then
   git clone https://github.com/RenChunhui/nvim.git $HOME/.config/nvim
 fi
 
-yarn global add bash-language-server
-yarn global add vscode-langservers-extracted
-yarn global add typescript-language-server
-yarn global add @tailwindcss/language-server
-yarn global add @volar/vue-language-server
-yarn global add yaml-language-server
+pnpm add -g bash-language-server
+pnpm add -g vscode-langservers-extracted
+pnpm add -g typescript-language-server
+pnpm add -g @tailwindcss/language-server
+pnpm add -g @volar/vue-language-server
+pnpm add -g yaml-language-server
 
 if [[ ! -d "$HOME/.config/nvim/lua-language-server" ]]; then
   cd $HOME/.config/nvim

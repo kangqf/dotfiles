@@ -22,9 +22,12 @@ if ! command -v brew >/dev/null 2>&1; then
   export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
-  git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git $HOME/brew-install
+  if [[ ! -d "$HOME/brew-install" ]]; then
+    git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git $HOME/brew-install
+  fi
+
   /bin/bash $HOME/brew-install/install.sh
   rm -rf brew-install
 fi
 
-brew bundle --file=$DOTPATH/Brewfile
+brew bundle --file=$DOTPATH/Brewfile --no-lock

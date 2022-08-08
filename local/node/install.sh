@@ -12,8 +12,6 @@ echo "${CYAN}#------------------------------------------------------------------
 echo "# NodeJS"
 echo "#--------------------------------------------------------------------${RESET}\n"
 
-if ! command -v yarn; then
-  brew install yarn
+if ! command -v pnpm; then
+  brew install pnpm
 fi
-
-

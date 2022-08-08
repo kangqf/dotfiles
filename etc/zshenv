@@ -19,37 +19,26 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --fontdir=/Library/Fonts"
 export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+# TUNA end
 
 # USTC
 # export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.ustc.edu.cn/brew.git
 # export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
 # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+# USTC end
 
 # GitHub
 # export HOMEBREW_BREW_GIT_REMOTE=https://github.com/Homebrew/brew
 # export HOMEBREW_CORE_GIT_REMOTE=https://github.com/Homebrew/homebrew-core
 # export HOMEBREW_BOTTLE_DOMAIN=https://ghcr.io/v2/homebrew/core
+# GitHub end
 
-
-
-###############################################################################
-# Golang                                                                      #
-###############################################################################
-
-# Go 环境变量
-export GOPATH=/usr/local/bin/go
-export PATH=$GOPATH/bin:$PATH
-export GO111MODULE=on
-
-# Go 代理
-export GOPROXY=https://goproxy.cn
-
-
-
-###############################################################################
-# Dotfiles                                                                    #
-###############################################################################
-
-# 将自定义 dm 命名添加至环境变量
+# dotfiles
 export DOTPATH=$HOME/.config/dotfiles
-export PATH=$DOTPATH/bin:$PATH
+export PATH="$DOTPATH/bin:$PATH"
+# dotfiles end
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

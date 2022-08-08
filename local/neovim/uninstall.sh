@@ -4,11 +4,11 @@
 
 rm -rf $HOME/.config/nvim
 
-yarn global remove bash-language-server
-yarn global remove vscode-langservers-extracted
-yarn global remove typescript-language-server
-yarn global remove @tailwindcss/language-server
-yarn global remove @volar/vue-language-server
-yarn global remove yaml-language-server
+pnpm remove --global bash-language-server
+pnpm remove --global vscode-langservers-extracted
+pnpm remove --global typescript-language-server
+pnpm remove --global @tailwindcss/language-server
+pnpm remove --global @volar/vue-language-server
+pnpm remove --global yaml-language-server
 
 brew uninstall neovim

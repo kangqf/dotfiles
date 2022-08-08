@@ -43,7 +43,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool true;
 
 
 ###############################################################################
-# 程序坞                                                                       #
+# 程序坞                                                                       #
 ###############################################################################
 
 # Dock 项目图标大小设置
@@ -59,22 +59,29 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock show-recents -bool false
 
 # 重新整理 Dock
-if test ! $(which dockutil);then
-  brew install dockutil
-fi
+defaults delete com.apple.dock persistent-apps
 
-dockutil --no-restart --remove all
-dockutil --no-restart --add "/System/Applications/Launchpad.app"
-dockutil --no-restart --add "/Applications/Google Chrome.app"
-dockutil --no-restart --add "/Applications/Visual Studio Code.app"
-dockutil --no-restart --add "/Applications/WeChat.app"
-dockutil --no-restart --add "/Applications/QQ.app"
-dockutil --no-restart --add "/System/Applications/Mail.app"
-dockutil --no-restart --add "/System/Applications/Calendar.app"
-dockutil --no-restart --add "/Applications/iTerm.app"
-dockutil --no-restart --add "/System/Applications/System Preferences.app"
+# 重启程序坞
+dock_item() {
+    printf '%s%s%s%s%s' \
+           '<dict><key>tile-data</key><dict><key>file-data</key><dict>' \
+           '<key>_CFURLString</key><string>' \
+           "$1" \
+           '</string><key>_CFURLStringType</key><integer>0</integer>' \
+           '</dict></dict></dict>'
+}
 
+defaults write com.apple.dock \
+               persistent-apps -array "$(dock_item '/System/Applications/Launchpad.app')" \
+                                      "$(dock_item '/Applications/Safari.app')" \
+                                      "$(dock_item '/System/Applications/Mail.app')" \
+                                      "$(dock_item '/Applications/WeChat.app')" \
+                                      "$(dock_item '/Applications/QQ.app')" \
+                                      "$(dock_item '/Applications/Visual Studio Code.app')" \
+                                      "$(dock_item '/Applications/iTerm.app')" \
+                                      "$(dock_item '/System/Applications/System Preferences.app')"
 killall Dock
+
 
 
 

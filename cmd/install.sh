@@ -30,7 +30,6 @@ main() {
       dot install git
       dot install node
       dot install iterm
-      dot install vscode
       dot install neovim
       dot install macos
       ;;
@@ -51,9 +50,6 @@ main() {
       ;;
     node)
       sh $DOTPATH/local/node/install.sh
-      ;;
-    vscode)
-      sh $DOTPATH/local/vscode/install.sh
       ;;
     zsh)
       sh $DOTPATH/local/zsh/install.sh
