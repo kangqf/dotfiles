@@ -21,8 +21,6 @@
 </p>
 
 
-<<<<<<< HEAD
-=======
 Install
 ---
 
@@ -57,7 +55,6 @@ Features
 - Automatic software installation
 - Sensible OS X defaults
 
->>>>>>> develop
 
 Folder Structure
 ---
