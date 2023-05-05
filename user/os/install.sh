@@ -6,20 +6,13 @@ RED=$'\e[31m'
 GREEN=$'\e[32m'
 CYAN=$'\e[36m'
 RESET=$'\e[0m'
-<<<<<<<< HEAD:local/macos/install.sh
-========
 
 echo "📦 macOS configuration for you."
 
 ###############################################################################
 # 文档                                                                        #
 ###############################################################################
->>>>>>>> develop:user/os/install.sh
 
-echo "\n"
-echo "${CYAN}#--------------------------------------------------------------------"
-echo "# macOS"
-echo "#--------------------------------------------------------------------${RESET}\n"
 
 ###############################################################################
 # 访达                                                                        #
@@ -82,22 +75,13 @@ dock_item() {
 
 defaults write com.apple.dock \
                persistent-apps -array "$(dock_item '/System/Applications/Launchpad.app')" \
-<<<<<<<< HEAD:local/macos/install.sh
-                                      "$(dock_item '/Applications/Google Chrome.app')" \
-========
                                       "$(dock_item '/Applications/Safari.app')" \
->>>>>>>> develop:user/os/install.sh
                                       "$(dock_item '/System/Applications/Mail.app')" \
                                       "$(dock_item '/Applications/WeChat.app')" \
                                       "$(dock_item '/Applications/QQ.app')" \
                                       "$(dock_item '/Applications/Visual Studio Code.app')" \
-<<<<<<<< HEAD:local/macos/install.sh
-                                      "$(dock_item '/Applications/iTerm.app')" \
-                                      "$(dock_item '/System/Applications/System Preferences.app')"
-========
                                       "$(dock_item '/Applications/Alacritty.app')" \
                                       "$(dock_item '/System/Applications/System Settings.app')"
->>>>>>>> develop:user/os/install.sh
 killall Dock
 
 
