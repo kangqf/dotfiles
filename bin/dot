@@ -1,5 +1,6 @@
 #!/bin/sh
 
+<<<<<<< HEAD
 #----------------------------------------------------------------------
 # 帮助
 #----------------------------------------------------------------------
@@ -24,15 +25,27 @@ main() {
   case $1 in
     install)
       sh $DOTPATH/cmd/install.sh "$2"
+=======
+usage() {
+cat <<EOF
+USAGE
+  dot [command]
+
+Available Commands:
+  install     安装
+  uninstall   卸载
+  help        帮助
+EOF
+}
+
+main() {
+  case $1 in
+    install)
+      sh $DOTDIR/cmd/install.sh "$2"
+>>>>>>> develop
       ;;
     uninstall)
-      sh $DOTPATH/cmd/uninstall "$2"
-      ;;
-    clean)
-      sh $DOTPATH/cmd/clean "$2"
-      ;;
-    checkhealth)
-      sh $DOTPATH/cmd/checkhealth
+      sh $DOTDIR/cmd/uninstall.sh "$2"
       ;;
     help)
       usage

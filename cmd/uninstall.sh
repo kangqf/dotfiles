@@ -29,12 +29,17 @@ main() {
       dot uninstall brew
       dot uninstall git
       dot uninstall node
+<<<<<<< HEAD
       dot uninstall iterm
+=======
+      dot uninstall iterm2
+>>>>>>> develop
       dot uninstall vscode
       dot uninstall neovim
       dot uninstall macos
       ;;
     brew)
+<<<<<<< HEAD
       sh $DOTPATH/local/brew/uninstall.sh
       ;;
     git)
@@ -54,6 +59,27 @@ main() {
       ;;
     zsh)
       sh $DOTPATH/local/zsh/uninstall.sh
+=======
+      sh $DOTDIR/user/brew/uninstall.sh
+      ;;
+    git)
+      sh $DOTDIR/user/git/uninstall.sh
+      ;;
+    iterm2)
+      sh $DOTDIR/user/iterm2/uninstall.sh
+      ;;
+    neovim)
+      sh $DOTDIR/user/neovim/uninstall.sh
+      ;;
+    node)
+      sh $DOTDIR/user/node/uninstall.sh
+      ;;
+    vscode)
+      sh $DOTDIR/user/vscode/uninstall.sh
+      ;;
+    zsh)
+      sh $DOTDIR/user/zsh/uninstall.sh
+>>>>>>> develop
       ;;
     help)
       usage
