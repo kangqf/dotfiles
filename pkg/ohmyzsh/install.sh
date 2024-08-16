@@ -60,21 +60,4 @@ else
   echo ${GREEN}✔${RESET} "zsh-completions"
 fi
 
-rm -rf $HOME/.zshrc
-
-if [[ $(uname -m) == "arm64" ]]; then
-  cp $DOTDIR/etc/zsh/.zprofile $ZDOTDIR/.zprofile
-fi
-
-if [[ ! -f $HOME/.zshenv ]]; then
-  cp $HOME/.config/dotfiles/etc/zsh/.zshenv $HOME/.zshenv
-  source $HOME/.zshenv
-fi
-
-if [[ ! -d $ZDOTDIR/site-functions ]]; then
-  cp -R $DOTDIR/etc/zsh/site-functions $ZDOTDIR/site-functions
-fi
-
-cp $DOTDIR/etc/zsh/.zshrc $ZDOTDIR/.zshrc
-
-source $ZDOTDIR/.zshrc
+echo "📦 Installing Oh-My-Zsh done"
