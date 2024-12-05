@@ -25,6 +25,14 @@ EOF
 # 入口
 #######################################
 main() {
+  # 判断目标pkg 或者 是否存在，通过文件夹目录判断
+  if [ ! -d $KDOTPKGDIR/$1 ]; then
+    echo "not support pkg $1"
+  fi
+
+  exit 0
+
+
   case $1 in
     '')
       dot install zsh

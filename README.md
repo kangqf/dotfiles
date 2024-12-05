@@ -1,3 +1,24 @@
+
+
+
+## 目录结构
+
+
+## XDG 规范
+```sh
+XDG_CONFIG_HOME=$HOME/.config     # 配置
+XDG_CACHE_HOME=$HOME/.cache       # 缓存
+XDG_DATA_HOME=$HOME/.local/share  # 数据
+XDG_STATE_HOME=$HOME/.local/state # 状态
+```
+参考链接： 
+1. [The Power of the XDG Base Directory Specification](https://maex.me/2019/12/the-power-of-the-xdg-base-directory-specification/)
+2. [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/)
+3. [Go implementation of the XDG](https://github.com/adrg/xdg/blob/master/README.md)
+
+
+
+
 <div align="center">
   <h1>Dotfiles</h1>
   <p>Automated configuration, Preferences and software Installation for macOS.</p>

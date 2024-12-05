@@ -3,12 +3,32 @@
 usage() {
 cat <<EOF
 USAGE
-  dot [command]
+  kdot [command] [target@version] [options]
 
 Available Commands:
+  init        初始化系统
   install     安装
   uninstall   卸载
-  help        帮助
+  reinstall   重新安装
+  upgrade     升级
+  config      配置
+  tips        常见cmd用法
+  help        显示此信息
+
+Available target:
+  ${pkg}  安装软件
+  ${cmd}  命令常见用法
+
+Available options:
+  -scenario {场景 | dev vps work board}
+  -os {os@version 系统版本 | ubuntu@22.04}
+  -arch {架构 | arm64}
+  -device {device@index 设备序号 | rk3399@1 xps13 ipad2020}
+  -collect {软件包 init}
+
+Example usage:
+  kdot install pkg zsh -scenario dev -os mac@13 -device xps13
+  kdot install sys -scenario dev -os win
 EOF
 }
 
@@ -22,6 +42,9 @@ main() {
       ;;
     help)
       usage
+      ;;
+     *)
+      echo "指定的命令无效. 请运行 dot help."
       ;;
   esac
 }

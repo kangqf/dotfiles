@@ -2,6 +2,7 @@
 
 set -e
 
+# 导入库函数
 source "$(pwd)/lib/chalk.sh"
 source "$(pwd)/lib/helper.sh"
 
@@ -18,10 +19,13 @@ source "$(pwd)/spec/xdg/env.sh"
 
 # 3. copy 文件到指定目录
 if [[ -d "$XDG_DATA_HOME/kdot" ]]; then
-  fail "kdot dir -> $XDG_DATA_HOME/kdot existed"
-  exit 1
+  warn "kdot dir -> $XDG_DATA_HOME/kdot existed, just update kdot"
+  cp -rf $(pwd)/* "$XDG_DATA_HOME/kdot"
+  ok "kdot 更新成功"
+  exit 0
 fi
 
+info "first install kdot"
 info "mkdir for kdot -> $XDG_DATA_HOME/kdot"
 mkdir -p "$XDG_DATA_HOME/kdot"
 cp -rf $(pwd)/* "$XDG_DATA_HOME/kdot"
