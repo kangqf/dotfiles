@@ -40,6 +40,9 @@ main() {
     uninstall)
       sh $DOTDIR/cmd/uninstall.sh "$2"
       ;;
+    config)
+      sh $DOTDIR/cmd/config.sh "$2"
+      ;;
     help)
       usage
       ;;
