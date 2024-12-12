@@ -7,3 +7,9 @@ get_current_shell() {
   echo $shell
 }
 
+get_current_path() {
+  base_path=$(cd `dirname $0`; pwd)
+  echo $base_path
+}
+
+

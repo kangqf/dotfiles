@@ -17,6 +17,8 @@ XDG_STATE_HOME=$HOME/.local/state # 状态
 3. [Go implementation of the XDG](https://github.com/adrg/xdg/blob/master/README.md)
 
 
+## 软件包的目录结构
+可以使用 dot 进行安装管理，亦可以单独进行安装管理
 
 
 <div align="center">

@@ -1,4 +1,6 @@
-source "$(pwd)/lib/chalk.sh"
+script_path=$(cd `dirname $0`; pwd)
+base_path="$script_path/../.."
+source "$base_path/lib/chalk.sh"
 export ZSHDOTDIR=$XDG_CONFIG_HOME/zsh
 
 if [[ ! -d $ZSHDOTDIR ]]; then
@@ -26,7 +28,6 @@ fi
 #  cp -R $DOTDIR/etc/zsh/site-functions $ZDOTDIR/site-functions
 #fi
 
-cat $(pwd)/spec/xdg/env.sh >> $HOME/.zshenv
-cat $(pwd)/pkg/ohmyzsh/env.sh >> $HOME/.zshenv
+cat $base_path/pkg/ohmyzsh/env.sh >> $HOME/.zshenv
 
 source $ZSHDOTDIR/.zshrc
