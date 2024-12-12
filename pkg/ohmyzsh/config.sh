@@ -6,7 +6,7 @@ if [[ ! -d $ZSHDOTDIR ]]; then
   mkdir -p ${ZSHDOTDIR}
 fi
 
-if [[ ! -f $HOME/.zshrc ]]; then
+if [[ -f $HOME/.zshrc ]]; then
   info "copy zshrc $HOME/.zshrc -> $ZSHDOTDIR/.zshrc"
   cp $HOME/.zshrc $ZSHDOTDIR/.zshrc
   info "backup zshrc $HOME/.zshrc -> $HOME/.zshrc.`date +%F-%R:%S`"
