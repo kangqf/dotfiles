@@ -15,6 +15,19 @@ if [[ -f $HOME/.zshrc ]]; then
   mv $HOME/.zshrc $HOME/.zshrc.`date +%F-%R:%S`
 fi
 
+if [[ ! -d "$ZSH" ]]; then
+  git clone https://github.com/ohmyzsh/ohmyzsh.git /tmp/ohmyzsh || exit 1
+  ZSH=$ZSH sh /tmp/ohmyzsh/tools/install.sh
+
+  if [[ $? == 1 ]]; then
+    echo ${RED}✖${RESET} "Oh My Zsh"
+  else
+    echo ${GREEN}✔${RESET} "Oh My Zsh"
+  fi
+else
+  echo ${GREEN}✔${RESET} "Oh My Zsh"
+fi
+
 #if [[ $(uname -m) == "arm64" ]]; then
 #  cp $DOTDIR/etc/zsh/.zprofile $ZDOTDIR/.zprofile
 #fi

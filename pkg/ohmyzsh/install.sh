@@ -7,18 +7,7 @@ RESET=$'\e[0m'
 
 echo "📦 Installing Oh-My-Zsh for you."
 
-if [[ ! -d "$ZSH" ]]; then
-  git clone https://github.com/ohmyzsh/ohmyzsh.git /tmp/ohmyzsh || exit 1
-  ZSH=$ZSH sh /tmp/ohmyzsh/tools/install.sh
-
-  if [[ $? == 1 ]]; then
-    echo ${RED}✖${RESET} "Oh My Zsh"
-  else
-    echo ${GREEN}✔${RESET} "Oh My Zsh"
-  fi
-else
-  echo ${GREEN}✔${RESET} "Oh My Zsh"
-fi
+ echo ${GREEN}✔${RESET} "$@"
 
 #if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]]; then
 #  echo "安装 zsh-autosuggestions."

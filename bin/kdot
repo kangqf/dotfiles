@@ -6,7 +6,6 @@ USAGE
   kdot [command] [target@version] [options]
 
 Available Commands:
-  init        初始化系统
   install     安装
   uninstall   卸载
   reinstall   重新安装
@@ -27,21 +26,50 @@ Available options:
   -collect {软件包 init}
 
 Example usage:
-  kdot install pkg zsh -scenario dev -os mac@13 -device xps13
-  kdot install sys -scenario dev -os win
+  kdot install zsh -os mac@13 -scenario dev -device xps13
+  kdot config sys -scenario dev -os win
 EOF
 }
 
 main() {
-  case $1 in
+  KSCENARIO="default"
+  KOS="default"
+  KDEVICE="default"
+  KACTION=$1
+  KTARGET=$2
+  shift 2
+  while [ $# -gt 0 ]
+  do
+      case $1 in
+        -scenario)
+          KSCENARIO=$2
+          ;;
+        -device)
+          KDEVICE=$2
+          ;;
+        -os)
+          KOS=$2
+         ;;
+         *)
+          echo "指定的参数无效. 请运行 dot help."
+          ;;
+      esac
+    shift 2
+  done
+
+  echo "param: $KACTION $KTARGET $KSCENARIO $KOS $KDEVICE"
+
+  case $KACTION in
     install)
-      sh $DOTDIR/cmd/install.sh "$2"
+      sh $KDOTDIR/cmd/install.sh $KTARGET $KSCENARIO $KOS $KDEVICE
       ;;
     uninstall)
-      sh $DOTDIR/cmd/uninstall.sh "$2"
+      echo "kdot uninstall $KSCENARIO $KOS $KDEVICE"
+      #sh $KDOTDIR/cmd/uninstall.sh $KTARGET $KSCENARIO $KOS $KDEVICE
       ;;
     config)
-      sh $DOTDIR/cmd/config.sh "$2"
+      echo "kdot config $KSCENARIO $KOS $KDEVICE"
+      sh $KDOTDIR/cmd/config.sh $KTARGET $KSCENARIO $KOS $KDEVICE
       ;;
     help)
       usage
@@ -51,5 +79,10 @@ main() {
       ;;
   esac
 }
+
+if [ $# -lt 2 ]; then
+    echo "参数不正确. 请运行 dot help."
+    exit 1
+fi
 
 main "$@"

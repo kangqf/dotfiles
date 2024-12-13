@@ -18,4 +18,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
+
+# source $XDG_DATA_HOME/kdot/pkg/kdot/env.sh
+export KDOTDIR=$XDG_DATA_HOME/kdot
+export KDOTPKGDIR=$XDG_DATA_HOME/kdot/pkg
+export KDOTSYSDIR=$XDG_DATA_HOME/kdot/sys
+export PATH="$KDOTDIR/bin:$PATH"
 ```
