@@ -44,15 +44,15 @@ do
 done
 
 # 3. 安装oh-my-zsh
-info "2. install oh-my-zsh"
+info "3. install oh-my-zsh"
 if [[ ! -d "$ZSH" ]]; then
   git clone https://github.com/ohmyzsh/ohmyzsh.git /tmp/ohmyzsh || exit 1
   ZSH=$ZSH sh /tmp/ohmyzsh/tools/install.sh
 
   if [[ $? == 1 ]]; then
-    fail "Oh My Zsh failed"
+    fail "Oh My Zsh install failed"
   else
-    ok "Oh My Zsh Success"
+    ok "Oh My Zsh install Success"
   fi
 else
   info "Oh My Zsh Installed in $ZSH"
@@ -60,6 +60,9 @@ fi
 
 echo 'source $XDG_DATA_HOME/kdot/pkg/ohmyzsh/env.sh' >>  $HOME/.zshenv
 
+# 4. 恢复 zsh 配置
+info "4. restore zsh config"
+cat $ZDOTDIR/.zshrc.pre-oh-my-zsh  >> $ZDOTDIR/.zshrc
 
 source $ZDOTDIR/.zshrc
 source $HOME/.zshenv
