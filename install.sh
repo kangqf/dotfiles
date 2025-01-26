@@ -19,7 +19,7 @@ fi
 # 2. 先导入 xdg 规范
 source "$base_path/spec/xdg/env.sh"
 
-# 3. copy 文件到指定目录
+# 3. copy 文件到指定目录，如果存在该目录直接覆盖
 if [[ -d "$XDG_DATA_HOME/kdot" ]]; then
   warn "kdot dir -> $XDG_DATA_HOME/kdot existed, just update kdot"
   cp -rf $(pwd)/* "$XDG_DATA_HOME/kdot"
@@ -27,12 +27,14 @@ if [[ -d "$XDG_DATA_HOME/kdot" ]]; then
   exit 0
 fi
 
+# 4. 首次安装 kdot
 info "first install kdot"
 info "mkdir for kdot -> $XDG_DATA_HOME/kdot"
 mkdir -p "$XDG_DATA_HOME/kdot"
 cp -rf $base_path/* "$XDG_DATA_HOME/kdot"
 
 # 4. 添加环境变量，确保重启终端后能找到kdot
+# 注意 zsh 的 .zshenv 只能放到 Home 下面，无法定制目录
 cat $base_path/spec/xdg/env.sh >> $HOME/.zshenv
 echo 'source $XDG_DATA_HOME/kdot/pkg/kdot/env.sh' >>  $HOME/.zshenv
 
