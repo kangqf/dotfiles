@@ -17,6 +17,7 @@ group "📦 Installing Oh-My-Zsh for you."
 
 # 先配置 zsh 再配置 oh-my-zsh
 # .zshenv -> .zprofile -> .zshrc -> .zlogin -> .zlogout
+# https://juejin.cn/post/7128574050406367269
 
 # 1. 配置 zsh 根目录环境变量 ZDOTDIR
 info "1. import variable"
@@ -64,8 +65,11 @@ echo 'source $XDG_DATA_HOME/kdot/pkg/ohmyzsh/env.sh' >>  $HOME/.zshenv
 info "4. restore zsh config"
 cat $ZDOTDIR/.zshrc.pre-oh-my-zsh  >> $ZDOTDIR/.zshrc
 
-source $ZDOTDIR/.zshrc
+# TODO 5. 配置插件 git brew podman kubectl
+
 source $HOME/.zshenv
+source $ZDOTDIR/.zshrc
+
 
 group "📦 Installing Oh-My-Zsh done"
 
